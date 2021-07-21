@@ -1,0 +1,33 @@
+<div class="col-inner ">
+	<div class="box manufacturer">
+		<div class="box-heading">
+			<h2>
+				{{ heading_title }}
+			</h2>
+		</div>
+		<div class="box-content">
+			<table class="brand-table">
+				<tbody>
+					{% set i = 0 %}
+					{% for banner in banners %}
+						{% set i = i + 1 %}
+						{% if i == 1 or i % 7 == 0 %}
+							<tr>
+							{% endif %}
+							<td>
+								{% if banner.link %}
+									<a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive"/></a>
+								{% else %}
+								<a href="" onclick="return false;"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive"/></a>
+								{% endif %}
+							</td>
+							{% if i % 6 == 0 %}
+							</tr>
+						{% endif %}
+					{% endfor %}
+				</tbody>
+			</table>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>

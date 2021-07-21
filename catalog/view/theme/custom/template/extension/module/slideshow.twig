@@ -1,0 +1,40 @@
+<div class="col-inner">
+	<div class="swiper-container swiper-slider" data-loop="false" data-autoplay="5000" data-height="991px" data-min-height="350px" data-slide-effect="fade" data-slide-speed="800ms" data-keyboard="false" data-mousewheel="false" data-mousewheel-release="false" style="height: 991px;">
+		<div class="swiper-wrapper">
+			{% for banner in banners %}
+				{% set titles = banner.title|split('|') %}
+				<div class="swiper-slide " data-slide-bg="{{ banner.image }}">
+					<div class="slide-desc">
+						<h2 data-caption-animate="slideInRight" class="slide-tx">
+							{% if titles|length > 2 %}
+								{{ titles[0] }}
+							{% endif %}
+						</h2>
+						<span data-caption-animate="slideInRight" data-caption-delay="100">
+							{% if titles|length > 2 %}
+								{{ titles[1] }}
+							{% elseif titles|length > 1 %}
+								{{ titles[0] }}
+							{% endif %}
+						</span>
+						<h2 data-caption-animate="slideInRight" data-caption-delay="200">
+							<span>
+								{% if titles|length > 2 %}
+									{{ titles[2] }}
+								{% elseif titles|length > 1 %}
+									{{ titles[1] }}
+								{% else %}
+									{{ titles[0] }}
+								{% endif %}
+							</span>
+						</h2>
+						<a href="{{ banner.link }}" class="btn" data-caption-animate="slideInUp" data-caption-delay="400">
+							{{ shop_now_text }}
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="swiper-pagination" data-index-bullet="false" data-clickable="true"></div>
+	</div>
+</div>

@@ -1,0 +1,60 @@
+{% if categories %}
+	<div class="megamenu">
+		<ul class="sf-menu">
+			{% for category in categories %}
+				{% if category.children %}
+					<li class="sf-with-mega">
+						<a href="{{ category.href }}" data-letters="{{ category.name }}">
+							<span>
+								{{ category.name }}
+							</span>
+						</a>
+						<ul class="sf-mega">
+							<li class="sf-mega_row">
+								{% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+									<div class="sf-mega_section" style="width: 25%">
+										<ul>
+											{% for child in children %}
+												<li class="submenu_title">
+													<a href="{{ child.href }}">
+														{{ child.name }}
+													</a>
+												</li>
+											{% endfor %}
+										</ul>
+									</div>
+								{% endfor %}
+							</li>
+						</ul>
+					</li>
+				{% else %}
+					<li>
+						<a href="{{ category.href }}">
+							{{ category.name }}
+						</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+	<script>
+		(function ($) {
+$(window).load(function () {
+var o = $('.sf-menu');
+o.superfish();
+o.find('li a').each(function () {
+if ($(location).attr('href').indexOf($(this).attr('href')) >= 0) {
+$(this).addClass('active');
+return;
+}
+})
+if (o.parents('aside').length) {
+var width = $('.container').outerWidth() - $('aside').outerWidth();
+o.find('.sf-mega').each(function () {
+$(this).width(width);
+})
+}
+});
+})(jQuery);
+	</script>
+{% endif %}

@@ -1,0 +1,190 @@
+@-webkit-keyframes keyframesY {
+    0% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        -webkit-transition-timing-function: ease-in;
+        opacity: 0
+    }
+    40% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        -webkit-transition-timing-function: ease-in
+    }
+    60% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        opacity: 1
+    }
+    80% {
+        -webkit-transform: perspective(400px) rotate3d(0, 1, 0, -5deg)
+    }
+    100% {
+        -webkit-transform: perspective(400px)
+    }
+}
+
+a:hover, a:focus {
+    color: #ff2b5d
+}
+
+h1 a:hover, h1 a:active, h1 a:focus, h2 a:hover, h2 a:active, h2 a:focus, h3 a:hover, h3 a:active, h3 a:focus, h4 a:hover, h4 a:active, h4 a:focus, h5 a:hover, h5 a:active, h5 a:focus, h6 a:hover, h6 a:active, h6 a:focus {
+    color: #ff2b5d
+}
+
+.search button:hover, .search button:focus:hover, .search button:active:hover, .search button:focus, .search button:active {
+    color: #ff2b5d
+}
+
+.link:focus, .link:active, .link:hover, .link a:focus, .link a:active, .link a:hover {
+    color: #ff2b5d
+}
+
+.datepicker .prev:hover, .datepicker .prev.active, .datepicker .next:hover, .datepicker .next.active, .datepicker .day:hover, .datepicker .day.active, .datepicker .year:hover, .datepicker .year.active, .datepicker .month:hover, .datepicker .month.active, .datepicker .picker-switch:hover, .datepicker .picker-switch.active {
+    color: #ff2b5d
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li>a:hover, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #ff2b5d
+}
+
+.fa-stack i, .sbToggle:hover, .sbToggle:hover:before, .sbOptions li a:hover, .count-box strong, .testimonials blockquote:before, .terms_conditions_page h5:before, .contact_page .icon:before, .manufacturer-content div a:before, #content ul.list-unstyled a:before, input[type=checkbox]+label:after, #style_switcher .toggler:hover {
+    color: #ff2b5d
+}
+
+.bootstrap-datetimepicker-widget a[data-action]:hover, .bootstrap-datetimepicker-widget .timepicker td>span:hover {
+    color: #ff2b5d
+}
+
+.bootstrap-datetimepicker-widget td a:hover span:hover {
+    color: #ff2b5d
+}
+
+.site-map-page #content ul li a:hover, .site-map-page #content ul li a:focus, .site-map-page #content ul li a:active {
+    color: #ff2b5d
+}
+
+.site-map-page #content ul.category-list:before {
+    background: #ff2b5d
+}
+
+.site-map-page #content ul.category-list>li:before, .site-map-page #content ul.category-list>li:after {
+    background: #ff2b5d
+}
+
+.btn-icon:hover, .btn-icon:focus, .btn-icon:active {
+    color: #ff2b5d
+}
+
+.option-color .radio input[type=radio]:checked+label:after, .thumbnail a:hover, .contact_page .icon:before {
+    border-color: #ff2b5d
+}
+
+.manufacturer-content div a:hover, .manufacturer-content div a:focus, .manufacturer-content div a:active, #content ul.list-unstyled a:hover, #content ul.list-unstyled a:focus, #content ul.list-unstyled a:active {
+    color: #ff2b5d
+}
+
+.name a:hover, .name a:focus, .name a:active {
+    color: #ff2b5d
+}
+
+#livesearch_search_results li:hover a, #livesearch_search_results li.highlighted a {
+    color: #ff2b5d
+}
+
+@media(min-width:768px) {
+    header .nav>.toggle_cont>li>a:hover, header .nav>.toggle_cont>li>a.current, header .nav>.toggle_cont>li>a.active {
+        color: #ff2b5d
+    }
+}
+
+.toggle_cont>li>a:hover, .toggle_cont>li>a:focus, .toggle_cont>li>a:active, .toggle_cont>li>a.current, .toggle_cont>li>button:hover, .toggle_cont>li>button:focus, .toggle_cont>li>button:active, .toggle_cont>li>button.current {
+    color: #ff2b5d
+}
+
+.toggle_cont>li>a:hover i, .toggle_cont>li>a:hover:before, .toggle_cont>li>a:focus i, .toggle_cont>li>a:focus:before, .toggle_cont>li>a:active i, .toggle_cont>li>a:active:before, .toggle_cont>li>a.current i, .toggle_cont>li>a.current:before, .toggle_cont>li>button:hover i, .toggle_cont>li>button:hover:before, .toggle_cont>li>button:focus i, .toggle_cont>li>button:focus:before, .toggle_cont>li>button:active i, .toggle_cont>li>button:active:before, .toggle_cont>li>button.current i, .toggle_cont>li>button.current:before {
+    color: #ff2b5d
+}
+
+.btn:hover, .btn:focus, .btn:active, .btn:visited:hover, .btn:focus:active, .btn:active:focus, .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default:visited:hover, .btn-default:focus:active, .btn-default:active:focus, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:visited:hover, .btn-primary:focus:active, .btn-primary:active:focus, .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success:visited:hover, .btn-success:focus:active, .btn-success:active:focus, .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info:visited:hover, .btn-info:focus:active, .btn-info:active:focus, .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning:visited:hover, .btn-warning:focus:active, .btn-warning:active:focus, .btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger:visited:hover, .btn-danger:focus:active, .btn-danger:active:focus {
+    color: #ff2b5d
+}
+
+.product-btn i {
+    color: #ff2b5d
+}
+
+.product-btn:hover, .product-btn:focus, .product-btn:active {
+    color: #ff2b5d
+}
+
+.btn-primary {
+    background: #ff2b5d
+}
+
+.btn-primary:visited {
+    background: #ff2b5d
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:visited:hover, .btn-primary:focus:active, .btn-primary:active:focus {
+    color: #fff;
+    background: #f0073e
+}
+
+.ui-to-top:focus, .ui-to-top:active, .ui-to-top:hover {
+    background: #ff2b5d
+}
+
+.box-language .toggle:hover, .box-language .toggle:active, .box-language .toggle:focus, .box-language .toggle.active, .box-currency .toggle:hover, .box-currency .toggle:active, .box-currency .toggle:focus, .box-currency .toggle.active {
+    color: #ff2b5d
+}
+
+.social-block a:hover, .social-block a:focus, .social-block aactive {
+    color: #ff2b5d
+}
+
+.button-view .compare-total:hover, .button-view .compare-total:focus, .button-view .compare-total:active {
+    color: #ff2b5d
+}
+
+#list-view:hover, #grid-view:hover, #list-view.active, #grid-view.active {
+    color: #ff2b5d
+}
+
+.product-gallery .image-thumb .bx-wrapper .bx-prev:hover, .product-gallery .image-thumb .bx-wrapper .bx-next:hover {
+    color: #ff2b5d
+}
+
+.counter:hover, .counter:focus:hover {
+    color: #ff2b5d
+}
+
+.bootstrap-datetimepicker-widget td.day.active, .bootstrap-datetimepicker-widget td.day.active:hover, input[type=radio]:checked+label:after {
+    background-color: #ff2b5d
+}
+
+.btn-more:hover, .btn-more:focus, .btn-more:active, .btn-more:visited:hover, .btn-more:focus:active, .btn-more:active:focus {
+    color: #ff2b5d
+}
+
+.cart>button:hover strong, .cart>button:hover i {
+    color: #ff2b5d
+}
+
+.bg-color, .new-pr, .privacy_page ol li h5:before {
+    background-color: #ff2b5d
+}
+
+.rd-mobilemenu_ul .submenu_title>a:focus, .rd-mobilemenu_ul .submenu_title>a:active, .rd-mobilemenu_ul .submenu_title>a:focus, .rd-mobilemenu_ul li>a:focus, .rd-mobilemenu_ul li>a:active, .rd-mobilemenu_ul li>a:focus {
+    background: #ff2b5d
+}
+
+.rd-mobilemenu_ul .submenu_title>a.active, .rd-mobilemenu_ul li>a.active {
+    background: #ff2b5d
+}
+
+.rd-mobilemenu_ul .submenu_title>a:hover, .rd-mobilemenu_ul li>a:hover {
+    background: #ff2b5d
+}
+
+@media(max-width:767px) {
+    aside .box .box-heading:hover:after, .column-left .box .box-heading:hover:after, .col-lg-3 .box .box-heading:hover:after {
+        color: #ff2b5d
+    }
+}

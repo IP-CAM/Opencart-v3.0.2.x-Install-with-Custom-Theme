@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+	<html dir="{{ direction }}" lang="{{ lang }}"> <!--<![endif]-->
+	<!--<![endif]-->
+		<head>
+		<meta charset="UTF-8"/> <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>
+			{{ title }}
+		</title>
+		{% if robots %}
+			<meta name="robots" content="{{ robots }}"/>
+		{% endif %}
+		<base href="{{ base }}"/>
+		{% if description %}
+			<meta name="description" content="{{ description }}"/>
+		{% endif %}
+		{% if keywords %}
+			<meta name="keywords" content="{{ keywords }}"/>
+		{% endif %}
+		<meta property="og:title" content="{{ title }}"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="{{ og_url }}"/>
+		{% if og_image %}
+			<meta property="og:image" content="{{ og_image }}"/>
+		{% else %}
+			<meta property="og:image" content="{{ logo }}"/>
+		{% endif %}
+		<meta property="og:site_name" content="{{ name }}"/>
+
+		<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300&amp;subset=cyrillic" rel="stylesheet">
+		<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+		<link href="catalog/view/theme/custom/stylesheet/material-icons.css" rel="stylesheet">
+		<link href="catalog/view/theme/custom/stylesheet/fl-puppets.css" rel="stylesheet">
+		<link href="catalog/view/theme/custom/stylesheet/photoswipe.css" rel="stylesheet">
+		<link href="catalog/view/theme/custom/stylesheet/stylesheet.css" rel="stylesheet">
+		<link href="catalog/view/theme/custom/js/fancybox/jquery.fancybox.css" rel="stylesheet">
+		<link href="catalog/view/javascript/jquery/swiper/css/swiper.min.css" type="text/css" rel="stylesheet" media="screen"/>
+		<link href="image/catalog/favicon.png" rel="icon"/>
+
+		<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+		<script src="catalog/view/javascript/jquery/datetimepicker/moment/moment.min.js" type="text/javascript"></script>
+		<script src="catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+		<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+		<script src="catalog/view/javascript/custom/swiper/swmin.js" type="text/javascript"></script>
+		<script src="catalog/view/javascript/jquery/swiper/js/swiper.jquery.js" type="text/javascript"></script>
+		<script src="catalog/view/theme/custom/js/custom_megamenu/superfish.min.js" type="text/javascript"></script>
+		<script src="catalog/view/theme/custom/js/custom_megamenu/jquery.rd-navbar.min.js" type="text/javascript"></script>
+		<script src="catalog/view/theme/custom/js/custom_colorswitcher/jquery.cookies.js" type="text/javascript"></script>
+		<script src="catalog/view/theme/custom/js/custom_colorswitcher/style_switcher_demo.js" type="text/javascript"></script>
+		{% for style in styles %}
+			<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}"/>
+		{% endfor %}
+		{% for script in scripts %}
+			<script src="{{ script }}" type="text/javascript"></script>
+		{% endfor %}
+		<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+		{% for link in links %}
+			<link href="{{ link.href }}" rel="{{ link.rel }}"/>
+		{% endfor %}
+		{% for analytic in analytics %}
+			{{ analytic }}
+		{% endfor %}
+		<link id="color_scheme" href="catalog/view/theme/custom/stylesheet/color_schemes/color_scheme_1.css" rel="stylesheet">
+	</head>
+	<body>
+		<p id="gl_path" class="hidden" data-theme="custom"></p>
+		<div id="page">
+			<div id="page-preloader" class="visible">
+				<span class="preloader"></span>
+			</div>
+			<div class="ie-warning"></div>
+			<header>
+				<div class="header-top">
+					<div class="homebuilder clearfix ">
+						<div class="tm-container container ">
+							<div class="tm-inner">
+								<div class="row row-level-1 ">
+									<div class="row-inner top-block container clearfix">
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+											<div class="col-inner ">
+												<span class="button-phone">
+													<a href="callto:{{ telephone }}">
+														<i class="fl-puppets-telephone114"></i>
+														<span>
+															{{ telephone }}
+														</span>
+													</a>
+												</span>
+												<div id="search" class="search">
+													{{ search }}
+												</div>
+												<div class="box-cart">
+													{{ cart }}
+												</div>
+												<nav id="top-links" class="nav toggle-wrap">
+													<ul class="toggle_cont">
+														<li class="toggle-wrap">
+															<a href="{{ account }}" title="{{ text_account }}" class="toggle">{{ text_account }}</a>
+															{% if logged %}
+																<ul class="toggle_cont">
+																	<li>
+																		<a href="{{ account }}">{{ text_account }}</a>
+																	</li>
+																	<li>
+																		<a href="{{ order }}">{{ text_order }}</a>
+																	</li>
+																	<li>
+																		<a href="{{ transaction }}">{{ text_transaction }}</a>
+																	</li>
+																	<li>
+																		<a href="{{ download }}">{{ text_download }}</a>
+																	</li>
+																	<li>
+																		<a href="{{ logout }}">{{ text_logout }}</a>
+																	</li>
+																</ul>
+															{% else %}
+																<ul class="toggle_cont">
+																	<li>
+																		<a href="{{ register }}">{{ text_register }}</a>
+																	</li>
+																	<li>
+																		<a href="{{ login }}">{{ text_login }}</a>
+																	</li>
+																</ul>
+															{% endif %}
+														</li>
+													</ul>
+												</nav>
+												{% if logo %}
+													<h1 class="logo">
+														<a href="{{ home }}">
+															<img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive">
+														</a>
+													</h1>
+												{% else %}
+													<h1 class="logo">
+														<a href="{{ home }}">
+															{{ name }}
+														</a>
+													</h1>
+												{% endif %}
+											</div>
+										</div>
+										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+											<div class="col-inner ">
+												{{ menu }}
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+		</body>
+	</body>
+</html>

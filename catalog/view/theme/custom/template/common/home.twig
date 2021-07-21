@@ -1,0 +1,93 @@
+{{ header }}
+<section class="top">
+	<div class="homebuilder clearfix">
+		<div class="tm-container container">
+			<div class="tm-inner">
+				<div class="row row-level-1">{{ column_left }}
+					{% if column_left and column_right %}
+						{% set class = 'col-lg-6 col-md-6 col-sm-6 col-xs-6' %}
+					{% elseif column_left or column_right %}
+						{% set class = 'col-lg-9 col-md-9 col-sm-9 col-xs-9' %}
+					{% else %}
+						{% set class = 'col-lg-12 col-md-12 col-sm-12 col-xs-12' %}
+					{% endif %}
+					<div class="row-inner clearfix">
+						<div class="{{ class }}">{{ content_top }}{{ content_bottom }}</div>
+						{{ column_right }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{ newsletter }}
+	<script type="text/javascript">
+		function getCookie(c_name) {
+var search = c_name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) {
+offset += search.length
+end = document.cookie.indexOf(";", offset);
+if (end == -1) 
+end = document.cookie.length;
+
+returnvalue = unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+jQuery(document).ready(function ($) {
+var showIt = getCookie('shownewsletter');
+var m = 0;
+var date = new Date();
+date.setTime(date.getTime() + (m * 60 * 1000));
+if (showIt == '') {
+$('#tm-newsletter-popup').fadeIn(300);
+}
+$('#newsletter-popup-dont-show').click(function (e) {
+e.preventDefault()
+document.cookie = 'shownewsletter=true; path=/; expires=' + date.toString();
+$('#tm-newsletter-popup').fadeOut(300);
+});
+$('#newsletter-popup-close-btn').click(function (e) {
+e.preventDefault();
+document.cookie = 'shownewsletter=false';
+$('#tm-newsletter-popup').fadeOut(300);
+});
+$('#tm-newsletter-popup').submit(function (e) {
+e.preventDefault();
+var email = $("#input-tm-newsletter-popup-email").val();
+var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/igm;
+if (emailRegex.test(email)) {
+var dataString = 'zemez_newsletter_popup_email=' + email;
+$.ajax({
+type: "POST",
+url: "index.php?route=extension/module/zemez_newsletter_popup/addNewsletter",
+data: dataString,
+cache: false,
+success: function (result) {
+if (! result) {
+$('#tm-newsletter-popup_error').html('');
+$('#tm-newsletter-popup_success').stop(true, true).html('You have successfully subscribed').fadeIn(300).delay(4000).fadeOut(300);
+} else {
+$('#tm-newsletter-popup_success').html('');
+$('#tm-newsletter-popup_error').stop(true, true).html(result).fadeIn(300).delay(4000).fadeOut(300);
+}
+}
+});
+} else {
+$('#tm-newsletter-popup_success').html('');
+$('#tm-newsletter-popup_error').stop(true, true).html('Please enter a valid e-mail!').fadeIn(300).delay(4000).fadeOut(300);
+}
+});
+});
+	</script>
+
+</section>
+<div class="container">
+	<div class="row">
+		<div id="content" class="col-sm-12"></div>		 
+	</div>
+</div>
+{{ footer }}

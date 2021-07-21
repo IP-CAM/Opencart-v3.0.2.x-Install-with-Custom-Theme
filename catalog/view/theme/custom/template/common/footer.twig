@@ -1,0 +1,127 @@
+<footer>
+	<div class="container">
+		<div class="row">
+			{% if informations %}
+				<div class="col-xs-12 col-sm-12">
+					<div class="homebuilder clearfix accordion-footer">
+						<div class="tm-container container ">
+							<div class="tm-inner">
+								<div class="row row-level-1 ">
+									<div class="row-inner  clearfix">
+										<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+											<div class="col-inner ">
+												<h3 class="box-heading">{{ text_information }}</h3>
+												<ul class="box-content list-unstyled">
+													{% for information in informations %}
+														<li>
+															<a href="{{ information.href }}">{{ information.title }}</a>
+														</li>
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+										<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+											<div class="col-inner ">
+												<div class="box module-social">
+													<div class="social-block">
+														<h3 class="box-heading">{{ text_service }}</h3>
+														<div class="box-content">
+															<ul class="list-unstyled">
+																<li>
+																	<a href="{{ contact }}">{{ text_contact }}</a>
+																</li>
+																<li>
+																	<a href="{{ return }}">{{ text_return }}</a>
+																</li>
+																<li>
+																	<a href="{{ sitemap }}">{{ text_sitemap }}</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-5 col-sm-5 col-xs-12">
+											<div class="col-inner ">
+												{% if logo %}
+													<h1 class="logo">
+														<a href="{{ home }}">
+															<img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive">
+														</a>
+													</h1>
+												{% else %}
+													<h1 class="logo">
+														<a href="{{ home }}">
+															{{ name }}
+														</a>
+													</h1>
+												{% endif %}
+											</div>
+										</div>
+										<div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
+											<div class="col-inner ">
+												<div id="tm-newsletter" class="box newsletter">
+													<div class="box-content">
+														<form class="clearfix" method="post" enctype="multipart/form-data" id="tm-newsletter-form">
+															<div class="box-content clearfix">
+																<div class="newsletter-description">
+																	<p>{{ newsletter_description }}</p>
+																</div>
+																<div class="tm-login-form">
+																	<input type="text" name="zemez_newsletter_email" value="" placeholder="Your e-mail" id="input-tm-newsletter-email" class="form-control"/>
+																	<label class="control-label" for="input-tm-newsletter-email"></label>
+																</div>
+																<span id="tm-newsletter_error" class="newsletter-error"></span>
+																<span id="tm-newsletter_success" class="newsletter-success"></span>
+																<button type="submit" id="tm-newsletter-button" class="btn-primary pull-right">{{ text_subscribe }}</button>
+															</div>
+														</form>
+													</div>
+												</div>
+												<script>
+													$(document).ready(function () {
+$('#tm-newsletter').submit(function (e) {
+e.preventDefault();
+$.ajax({
+url: 'index.php?route=extension/module/zemez_newsletter/addNewsletter',
+type: 'POST',
+dataType: 'json',
+data: $('#tm-newsletter').find('input[type=\'text\']'),
+success: function (json) {
+if (json['success']) {
+$('#tm-newsletter_error').html('');
+$('#tm-newsletter_success').stop(true, true).html(json['success']).fadeIn(300).delay(4000).fadeOut(300);
+} else {
+$('#tm-newsletter_success').html('');
+$('#tm-newsletter_error').stop(true, true).html(json['error']).fadeIn(300).delay(4000).fadeOut(300);
+}
+},
+error: function (xhr, ajaxOptions, thrownError) {
+console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+}
+});
+});
+});
+												</script>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			{% endif %}
+		</div>
+		<div class="copyright">
+			<div class="container">{{ powered }}</div>
+		</div>
+	</div>
+</footer>
+<div class="ajax-overlay"></div>
+<div class="ajax-quickview-overlay">
+	<span class="ajax-quickview-overlay__preloader"></span>
+</div></div>{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>{% endfor %}</div></body></html>
